@@ -49,8 +49,10 @@ class Snap {
             System.out.println("Draw.");
         } else if (player1Score > player2Score) {
             System.out.println("Player 1 wins!");
-        } else System.out.println("Player 2 wins!");
+        } else
+            System.out.println("Player 2 wins!");
 
         System.out.println("Scores: " + player1Score + " vs " + player2Score);
+        scanner.close();
     }
 }
