@@ -4,7 +4,7 @@ public class PlayingCardDeck {
     private PlayingCard[] deck;
 
     public PlayingCardDeck() {
-        PlayingCard[] deck = new PlayingCard[52];
+        this.deck = new PlayingCard[52];
 
         for (int suit = 0; suit < 4; suit++) {
             for (int faceValue = 0; faceValue < 13; faceValue++) {
