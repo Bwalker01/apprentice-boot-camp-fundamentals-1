@@ -1,16 +1,9 @@
 package cards;
 
-public class Cards {
-    public static void main(String[] args) {
-        PlayingCardDeck deck = new PlayingCardDeck();
-        String[] deckInOrder = deck.getDeck();
-        for (String card : deckInOrder) {
-            System.out.println(card);
-        }
-    }
+public class PlayingCardDeck {
+    private PlayingCard[] deck;
 
-    String[] getCards() {
-        String[] result = new String[52];
+    public PlayingCardDeck() {
         PlayingCard[] deck = new PlayingCard[52];
 
         for (int suit = 0; suit < 4; suit++) {
@@ -18,7 +11,10 @@ public class Cards {
                 deck[suit * 13 + faceValue] = new PlayingCard(suit, faceValue);
             }
         }
+    }
 
+    public String[] getDeck() {
+        String[] result = new String[52];
         for (PlayingCard card : deck) {
             result[card.getSuitNum() * 13 + card.getValue()] = card.toString();
         }
