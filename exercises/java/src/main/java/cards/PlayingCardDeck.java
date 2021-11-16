@@ -42,6 +42,6 @@ public class PlayingCardDeck implements SnapDeckInterface {
     }
 
     public PlayingCard[] getCards() {
-        return deck;
+        return Arrays.copyOfRange(deck, nextCard, 51);
     }
 }
