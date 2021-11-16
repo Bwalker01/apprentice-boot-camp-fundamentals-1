@@ -1,6 +1,6 @@
 package cards;
 
-public class PlayingCard implements SnapCardInterface {
+public class PlayingCard extends Card {
     private Suit suit;
     private int suitNum;
     private int faceValue;
@@ -11,7 +11,7 @@ public class PlayingCard implements SnapCardInterface {
         this.faceValue = faceValue;
     }
 
-    public boolean snap(SnapCardInterface compare) {
+    public boolean snap(Card compare) {
         if (compare instanceof PlayingCard) {
             PlayingCard card = (PlayingCard) compare;
             if (faceValue == card.getValue() || (faceValue > 9 && card.getValue() > 9)) {
