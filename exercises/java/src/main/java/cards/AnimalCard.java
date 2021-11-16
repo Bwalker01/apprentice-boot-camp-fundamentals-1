@@ -1,6 +1,6 @@
 package cards;
 
-public class AnimalCard {
+public class AnimalCard implements SnapCardInterface {
 
     private final Animal animal;
 
@@ -8,8 +8,12 @@ public class AnimalCard {
         this.animal = animal;
     }
 
-    boolean snap( AnimalCard otherCard ){
-        return otherCard != null && this.animal.equals(otherCard.animal);
+    public boolean snap(SnapCardInterface compare) {
+        if (compare instanceof AnimalCard) {
+            AnimalCard card = (AnimalCard) compare;
+            return card != null && this.animal.equals(card.animal);
+        }
+        return false;
     }
 
     @Override

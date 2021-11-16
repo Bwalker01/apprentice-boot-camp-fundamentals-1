@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-class AnimalDeck {
+class AnimalDeck implements SnapDeckInterface {
 
     private List<AnimalCard> cards;
 
@@ -16,11 +16,16 @@ class AnimalDeck {
         }
     }
 
-    void shuffle() {
+    public void shuffle() {
         Collections.shuffle(cards);
     }
 
-    String[] getCards() {
+    public SnapCardInterface[] getCards() {
+        SnapCardInterface[] array = new SnapCardInterface[cards.size()];
+        return cards.toArray(array);
+    }
+
+    public String[] getAllCards() {
         String[] result = new String[cards.size()];
         for (int i = 0; i < cards.size(); i++) {
             AnimalCard card = cards.get(i);
@@ -29,7 +34,7 @@ class AnimalDeck {
         return result;
     }
 
-    AnimalCard deal() {
+    public SnapCardInterface deal() {
         return cards.remove(0);
     }
 }

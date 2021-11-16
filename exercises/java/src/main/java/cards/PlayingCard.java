@@ -12,10 +12,15 @@ public class PlayingCard implements SnapCardInterface {
     }
 
     public boolean snap(SnapCardInterface compare) {
-        if (faceValue == compare.getValue() || (faceValue > 9 && compare.getValue() > 9)) {
-            return true;
+        if (compare instanceof PlayingCard) {
+            PlayingCard card = (PlayingCard) compare;
+            if (faceValue == card.getValue() || (faceValue > 9 && card.getValue() > 9)) {
+                return true;
+            }
+            return false;
+        } else {
+            return false;
         }
-        return false;
     }
 
     public int getValue() {
