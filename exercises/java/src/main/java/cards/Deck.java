@@ -27,4 +27,8 @@ public abstract class Deck {
     public Card deal() {
         return cardsInDeck.remove(0);
     }
+
+    public List<Card> getDeck() {
+        return cardsInDeck;
+    }
 }
